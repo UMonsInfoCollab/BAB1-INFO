@@ -1,9 +1,8 @@
 # UMons Info Collab
-Dépôt collaboratif pour s'échanger des synthèses, notes de cours concernant la formation sciences informatiques à l'UMons.
+Dépôt collaboratif pour s'échanger des synthèses, notes de cours, formulaires, flashcards... concernant la formation sciences informatiques à l'UMons.
 
 ## Licence
-La licence utilisée est la GPL V3.0. Elle dérive du fait que certaines ressources étaient initialement sur un des dépôts de
-https://github.com/UMonsIT, dont certains sont sous la licence GPL V3.0 et d'autres sous licence MIT.
+La licence utilisée est la GPL V3.0. Elle dérive du fait que certaines ressources étaient initialement sur un des dépôts de https://github.com/UMonsIT, dont certains sont sous la licence GPL V3.0 et d'autres sous licence MIT.
 Un fichier licence résume les implications de cette licence.
 
 Notez bien que le support de cours trouvé sur moodle ne vous appartient pas et donc vous ne pouvez pas le mettre sur le dépôt sans autorisation explicite du propriétaire du cours.
@@ -23,6 +22,12 @@ Toutefois, il est possible de revenir à la structure un cours qui reste plus fa
 !!!
 Les projets étant trop volumineux, ils auront éventuellement leurs propre dépôts. Un lien sera laissé dans ce dépôt principal.
 !!!
+
+### Qualité des documents
+Il est complique d'exiger des documents de parfaite qualité car ils sont trop peu nombreux. C'est pour cette raison qu'une notation sera attribuée a chaque document selon une échelle a 3 niveaux.
+* [***] Qualité excellente (ex: document PDF LateX)
+* [** ] Qualité moyenne (ex: notes manuscrites parfaitement lisibles
+* [*  ] Qualité médiocre (ex: notes manuscrites standard)
 
 ### Administration
 Pour éviter au dépôt de mourir prématurément, il serait préférable d'avoir en permanence plusieurs administrateurs dans des années différentes.
@@ -47,14 +52,9 @@ Voici le template de structure interne à suivre au maximum. A noter que pour co
 
 ```
 NOM_COURS
-│   fiche.md <- description générale du cours, exemples d'horaires, ECTS, professeur,...   
-└─── Théorie <- contient tout ce qui est note de cours voire support de cours
-│   └─── Support <- Syllabus, slides, ...
-│       │    NOM_COURS_00(_NOM_CHAPITRE).pdf
-│       │    NOM_COURS_01(_NOM_CHAPITRE).pdf
-│       │    ...
+└─── Théorie
 │   └─── Nom_Prenom <- NOTES (pas synthèses) personnelles
-│       │    Notes.pdf <- pour pouvoir télécharger directement sur github
+│       │    Notes.pdf
 │       │    Notes.tex
 │       └─── Images
 │   └─── Nom_Prenom
@@ -64,9 +64,6 @@ NOM_COURS
 │   ...
 └─── TP
 │   └─── TP_1
-│       │    Master_Rapport.pdf
-│       │    Master_Rapport.tex <- Synthèse ou chacun peut participer pour garder le meilleur de chacun
-│       └─── Images <- Images liées au master_rapport
 │       └─── Nom_Prenom
 │           │    rapport.pdf
 │           │    rapport.tex
@@ -75,13 +72,15 @@ NOM_COURS
 │    └─── TP_2
 │    ...
 └─── Synthèses
-│    │    master_synthese.pdf
-│    │    master_synthese.tex
-│    └─── Images
 │    └─── Nom_Prenom
 │        │    synthese.pdf
 │        │    synthese.tex
 │        └─── Images
+│    └─── Nom_Prenom
+│    ...
+└─── Flashcards
+│    └─── Nom_Prenom
+│        └───deck.apkg
 │    └─── Nom_Prenom
 │    ...
 ```
