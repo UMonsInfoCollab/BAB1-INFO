@@ -53,11 +53,11 @@ Voici le template de structure interne à suivre au maximum. A noter que pour co
 ```
 NOM_COURS
 └─── Théorie
-│   └─── Nom_Prenom <- NOTES (pas synthèses) personnelles
+│   └─── nom_prenom <- NOTES (pas synthèses) personnelles
 │       │    Notes.pdf
 │       │    Notes.tex
 │       └─── Images
-│   └─── Nom_Prenom
+│   └─── nom_prenom
 │       │    Notes.pdf
 │       │    Notes.tex
 │       └─── Images
@@ -72,15 +72,10 @@ NOM_COURS
 │    └─── TP_2
 │    ...
 └─── Synthèses
-│    └─── Nom_Prenom
+│    └─── nompPrenom
 │        │    synthese.pdf
 │        │    synthese.tex
 │        └─── Images
-│    └─── Nom_Prenom
-│    ...
-└─── Flashcards
-│    └─── Nom_Prenom
-│        └───deck.apkg
-│    └─── Nom_Prenom
+│    └─── nom_prenom
 │    ...
 ```

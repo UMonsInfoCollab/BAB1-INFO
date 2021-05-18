@@ -1,0 +1,73 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+
+\title{Synthese - IEEE754}
+\author{Jaunart Gilles}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Conversion decimal vers IEEE754}
+
+\subsection{Signe:}
+Si $x > 0$, le bit de signe vaut 0. Si $x < 0$, le bit de signe vaut 1. \\
+Par la suite on prendra la valeur absolue de $X$.
+
+\subsection{Normalisation:}
+$x$ est normalisé à l’aide de $n$ divisions successives afin que $x'.2^n=x$ où $1 \leq x' <2$. \\
+Par exemple, $x=6.2$ est divisé $n=2$ fois par $2$ pour obtenir $x'=1,55$ tel que $1,55.2^2=6,2$
+
+\subsection{Déduction de l'exposant:}
+On pose $2^n=2^{e-B}$, ce qui permet de déduire $e=n+B$. On vérifie alors que le nombre est bien représentable. \\
+Si $0<e<2^{E-1}$, alors la représentation normalisée doit etre utilisée. \\
+Si $e \leq 0$, alors on doit utiliser la dénormalisée.
+
+\subsection{Déduction de la mantisse en représentation normalisée:}
+On pose $x'=1+\frac{m}{2^M}$, ce qui permet de déduire $m=(x'-1).2^M$
+
+\subsection{Déduction de la mantisse en représenation dénormalisée:}
+Ici l'exposant est fixe, $e=1$. On pose $x=\frac{m}{2^M}.2^{1-B}$, ce qui permet de déduire $m=x.2^{M-(1-B)}$
+
+\newpage
+
+\section{Arrondi avec IEEE754}
+
+\subsection{Round-to-nearest-even:}
+On arrondit au nombre le plus proche. Ex: $2,4 \rightarrow 2$ ; $1,7 \rightarrow 2$ \\
+Si on se retrouve pile entre 2 nombres pairs (ex: $1,35$ ; $2,65$ ; $3,15$) alors on arrondit au nombre pair le plus proche. Ex: $1,35 \rightarrow 1,4$ car $4$ est pair et pas $3$ ; 
+$2,65 \rightarrow 2,6$ ; $3,15 \rightarrow 3,2$
+
+\subsection{Round-toward-zero:}
+On tronque la partie non-représentable. Ex: $1,4 \rightarrow 1$ ; $2,7 \rightarrow 2$ ; $-2,5 \rightarrow -2$
+
+\subsection{Round-down:}
+Il s'agit de l'arrondi par défaut. Ex: $1,4 \rightarrow 1$ ; $2,7 \rightarrow 2$ ; $-2,5 \rightarrow -3$
+
+\subsection{Round-up:}
+Il s'agit de l'arrondi par excés. Ex: $1,4 \rightarrow 2$ ; $2,7 \rightarrow 3$ ; $-2,5 \rightarrow -2$
+
+\newpage
+
+\section{Typologie des erreurs}
+
+\subsection{Erreur vraie:}
+$\Delta x = X - \^X$ où $\^X$ est la valeur de nombre représenté.
+
+\subsection{Erreur absolue:}
+$|\Delta x| = |X - \^X|$
+
+\subsection{Erreur relative:}
+$\epsilon_X = \frac{|X-\^X|}{|X|}$ \\
+
+\subsection{Epsilon machine:}
+La précision machine ou "epsilon machine" est une borne sur l'erreur relative qui 
+dépend du format de représentation, en particulier de la taille de la mantisse $M$. \\
+\begin{center}
+    $\frac{|X-\^X|}{|X|} \leq \epsilon_M$ où $\epsilon_M = 2^{-(M+1)}$
+\end{center}
+
+\end{document}
