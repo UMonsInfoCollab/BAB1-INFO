@@ -11,6 +11,35 @@
 \begin{document}
 \maketitle
 
+\section{Paramètres et valeurs speciales:}
+
+Lettre majuscule représente la taille \\
+Lettre minuscule représente la valeur \\
+\\
+E = exposant \\
+M = mantisse \\
+B = biais \\
+S = bit de signe
+
+\subsection{Paramètres IEEE754:}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+\textbf{Précision} & \textbf{Taille (bits)} & \textbf{E} & \textbf{M} & \textbf{B} \\ \hline
+Simple             & 32                     & 8          & 23         & 127        \\ \hline
+Double             & 64                     & 11         & 52         & 1023       \\ \hline
+\end{tabular}
+
+\subsection{Valeurs speciales:}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{s} & \textbf{E} & \textbf{m} & \textbf{valeur} \\ \hline
+0          & $2^{E-1}$  & 0          & $+ \infty$      \\ \hline
+1          & $2^{E-1}$  & 0          & $- \infty$      \\ \hline
+0 / 1      & $2^{E-1}$  & $\neq$0    & NaN             \\ \hline
+\end{tabular}
+
+\newpage
+
 \section{Conversion decimal vers IEEE754}
 
 \subsection{Signe:}
