@@ -23,12 +23,6 @@ Toutefois, il est possible de revenir à la structure un cours qui reste plus fa
 Les projets étant trop volumineux, ils auront éventuellement leurs propre dépôts. Un lien sera laissé dans ce dépôt principal.
 !!!
 
-### Qualité des documents
-Il est complique d'exiger des documents de parfaite qualité car ils sont trop peu nombreux. C'est pour cette raison qu'une notation sera attribuée a chaque document selon une échelle a 3 niveaux.
-* [***] Qualité excellente (ex: document PDF LateX)
-* [** ] Qualité moyenne (ex: notes manuscrites parfaitement lisibles
-* [*  ] Qualité médiocre (ex: notes manuscrites standard)
-
 ### Administration
 Pour éviter au dépôt de mourir prématurément, il serait préférable d'avoir en permanence plusieurs administrateurs dans des années différentes.
 
