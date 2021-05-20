@@ -1,0 +1,34 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+
+\title{Formulaire - adresse memoire}
+\author{Proietti Ugo}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Cache Direct-mapped}
+\begin{itemize}
+    \item Offset (O) = $log_2$(capacite d'une ligne en octects)
+    \item Set (S) = $log_2$(nombre de lignes)
+    \item Tag (T) = Taille de l'adresse en bits - O - S
+\end{itemize}
+
+\section{Cache X-way set-associative}
+\begin{itemize}
+    \item Un set = X du X-way
+    \item Offset (O) = $log_2$(capacite d'une ligne en octects)
+    \item Set (S) = $log_2$(nombre de lignes / X)
+    \item Tag (T) = Taille de l'adresse en bits - O - S
+\end{itemize}
+
+\section{Cache fully-associative}
+\begin{itemize}
+    \item Toutes les lignes sont dans un seul set
+    \item Offset (O) = $log_2$(capacite d'une ligne en octects)
+    \item Set (S) = $log_2(1) = 0$
+    \item Tag (T) = Taille de l'adresse en bits - O - S
+\end{itemize}
+
+\end{document}
