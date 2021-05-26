@@ -1,8 +1,8 @@
 # encoding=windows-1252
 
 """
-Disclaimer : y'a pas tout qui marche des fois ça bug
-gentil créateur : Nephty :)
+Disclaimer : y'a pas tout qui marche des fois Ã§a bug
+gentil crÃ©ateur : Nephty :)
 """
 
 from math import fabs
@@ -82,13 +82,13 @@ def LTZtoBinary(x, M):
     w = ""
     bits = 0
     while x > 0 and bits < M:
-        print(f"{x} > 0 et le nombre de bits < {M} (nombre max de bits demandés)")
+        print(f"{x} > 0 et le nombre de bits < {M} (nombre max de bits demandÃ©s)")
         print(f"--> on multiplie {x} par 2, il devient {x * 2}")
         x *= 2
         bits += 1
         if int(x) > 0:
             print(f"{x} > 0")
-            print(f"--> on soustrait 1 à {x} et on ajoute '1' au mot")
+            print(f"--> on soustrait 1 Ã  {x} et on ajoute '1' au mot")
             x -= 1
             w += "1"
         else:
@@ -96,7 +96,7 @@ def LTZtoBinary(x, M):
             print(f"--> on ajoute '0' au mot")
             w += "0"
         print("[---------]")
-    print(f"{x} <= 0 ou le nombre max de bits demandé < {M}")
+    print(f"{x} <= 0 ou le nombre max de bits demandÃ© < {M}")
     print(f"{x} <= 0 : {x <= 0}, nbr max de bits < {M} : {bits < M}")
     return w
 
@@ -207,7 +207,7 @@ def decToIEEE754(x, M, E, B):
         bine = "0" * E
         binm = str(bin(m)[2:])
     else:
-        return "Le nombre n'est pas représentable"
+        return "Le nombre n'est pas reprÃ©sentable"
     while len(bine) < E:
         bine = "0" + bine
     while len(binm) < M:
@@ -216,7 +216,7 @@ def decToIEEE754(x, M, E, B):
 
 
 def bestBiaisFromELength(E):
-    return 2 ** (E - 1)
+    return 2 ** (E - 1) - 1
 
 
 def getEpsilonMachine(M):
@@ -308,16 +308,16 @@ def binAddFloats(s1, s2, E):
             somme = "0" + somme
         print(f"{expfinal} ({somme[0:len(somme) - E - 2]}) {somme[len(somme) - E - 2:]}")
     print("Attention, si le nombre entre () est plus long que 1 bit, il faut normaliser :"
-          "\nIl faut décaler vers la droite (passer de (10) à (1) 0 par exemple) et augmenter de 1 l'exposant. Ne pas "
-          "oublier de supprimer les bits qui \"dépassent\" à droite. "
+          "\nIl faut dÃ©caler vers la droite (passer de (10) Ã  (1) 0 par exemple) et augmenter de 1 l'exposant. Ne pas "
+          "oublier de supprimer les bits qui \"dÃ©passent\" Ã  droite. "
           "\n\nSi l'exposant est de la forme 111...10, que la mantisse est de la forme 000...00 et que le nombre "
           "entre () est plus long que 1 bit, "
-          "\nIl n'est pas représentable, car il faut alors décaler et incrémenter l'exposant,"
+          "\nIl n'est pas reprÃ©sentable, car il faut alors dÃ©caler et incrÃ©menter l'exposant,"
           "\nCe qui implique que l'exposant vaut 111....11 et la mantisse 0000...00 ce qui vaut l'infini (pas -inf "
           "car somme)"
-          "\nSi le nombre entre () est long de 3 4 bits, il faut faire attention car en décalant il faudra"
-          "faire un report à l'arrondi."
-          "\n(Ouais jsp trop cque je fais mais ça marche 3x sur 4)")
+          "\nSi le nombre entre () est long de 3 4 bits, il faut faire attention car en dÃ©calant il faudra"
+          "faire un report Ã  l'arrondi."
+          "\n(Ouais jsp trop cque je fais mais Ã§a marche 3x sur 4)")
 
 
 # EXAMPLES :
